@@ -1,0 +1,41 @@
+<mat-card>
+  <h3>Add a new patient</h3>  
+
+<mat-form-field>
+    <input matInput placeholder="enter name" [(ngModel)]="patname">
+</mat-form-field><br>
+<mat-form-field>
+    <input matInput placeholder="enter surname" [(ngModel)]="patsurname">
+</mat-form-field><br>
+<mat-form-field>
+    <input  maxlength="2" matInput placeholder="enter age" [(ngModel)]="patage"> 
+</mat-form-field><br>
+<mat-form-field>
+    <select matNativeControl [(ngModel)]="patgender" placeholder="Gender" >
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+</mat-form-field><br>
+<mat-form-field>
+    <input  matInput placeholder="enter Id"  [(ngModel)]="id" maxlength="13">
+</mat-form-field><br>
+  
+<button mat-raised-button color="primary" (click)="Addpatient(patname,patsurname,patage,patgender,id)">ADD</button><br>
+ <!-- <button [routerLink]="['/Details', Patid]">Patient information</button>  -->
+</mat-card>
+
+<div>
+<p *ngFor = "let patient of hospital">
+    <!-- {{patient.Name}}
+    {{patient.Surname}}
+    {{patient.Age}}
+    {{patient.gender}} -->
+    {{patient.Patid}}
+    <button mat-stroked-button color="primary" [routerLink]="['/Details', patient.Patid]">Patient information</button>
+
+</p>
+
+
+</div>
+
+<router-outlet></router-outlet>

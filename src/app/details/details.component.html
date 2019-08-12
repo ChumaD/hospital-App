@@ -1,0 +1,9 @@
+<h2>Patient details</h2>
+<p *ngIf="Patid;">
+    {{Patid}}
+{{hospital.Name}}
+{{hospital.Surname}}
+{{hospital.Age}}
+{{hospital.gender}}
+</p>
+<button mat-raised-button color="primary" [routerLink]="['/admin']" >Back</button>

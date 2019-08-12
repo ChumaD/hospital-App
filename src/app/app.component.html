@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" width="250" src="../assets/image/hospital.jpg">
+</div>
+<!----button mat-stroked-button color="primary" [routerLink]="['/admin']">ADMIN</button>
+<button mat-stroked-button color="primary" [routerLink]="['/patient']">PATIENT</button>
+<button mat-stroked-button color="primary" [routerLink]="['/doctor']">DOCTOR</button-->
+
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+  <mat-button-toggle value="bold" [routerLink]="['/admin']" >ADMIN</mat-button-toggle>
+  <mat-button-toggle value="italic" [routerLink]="['/patient']" >PATIENT</mat-button-toggle>
+  <mat-button-toggle value="underline" [routerLink]="['/doctor']">DOCTOR</mat-button-toggle>
+</mat-button-toggle-group>
+
+<router-outlet></router-outlet>

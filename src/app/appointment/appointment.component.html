@@ -1,0 +1,39 @@
+<mat-card>
+ <h3>Appointment</h3>
+     <mat-form-field>
+      <input matInput [(ngModel)]="Patid">
+    </mat-form-field><br> 
+    <mat-form-field>
+     <input type="date" matInput placeholder="enter Date" [(ngModel)]="appodate">
+    </mat-form-field><br>
+    <mat-form-field>
+     <input matInput placeholder="enter Reason" [(ngModel)]="apporeason">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput [(ngModel)]="ID">
+    <!-- <select matNativeControl placeholder="enter Doctor" [(ngModel)]="appodoctor">
+      <option value="Dr Nell">DR Nell</option> 
+      <option value="Dr Ndaba">DR Ndaba</option>
+      <option value="Dr Damane">DR Damane</option>
+      <option value="Dr Booth ">DR Booth</option>
+    </select>     -->
+    </mat-form-field><br>  
+        <button mat-raised-button color="primary" (click)="Addappo(Patid,appodate,apporeason,ID)">ADD</button>
+    </mat-card>
+
+<mat-card>
+     <p *ngFor="let patient of hospitalzz">
+       {{patient.Patid}}
+       {{patient.date}}
+       {{patient.reason}}
+       {{patient.ID}}
+      <button mat-raised-button color="primary" (click)="editAppo(patient)">Edit</button>
+      <button mat-raised-button color="primary" (click)="deleteAppo(patient)">Delete</button>
+     </p>
+  </mat-card>
+  
+  <div *ngIf="empty">
+    <h3>No appointment made!!</h3>
+     </div>
+
+<router-outlet></router-outlet>

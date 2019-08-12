@@ -1,0 +1,20 @@
+<h3>Patients information</h3>
+<p *ngFor = "let patient of patientList  ">
+        {{patient.Name}}
+        {{patient.Surname}}
+        {{patient.Age}}
+        {{patient.gender}} 
+        {{patient.Patid}}
+<button mat-stroked-button color="primary"  [routerLink]="['/Appointment', patient.Patid]">make appointment</button>
+</p>
+
+<!----p *ngFor = "let patient of patientList">
+                {{patient.Name}}
+                {{patient.Surname}}
+                {{patient.Age}}
+                {{patient.gender}} >
+                {{patient.Patid}}
+                <button mat-stroked-button color="primary" [routerLink]="['/Details', patient.Patid]">Patient information</button>
+            
+            </p-->
+

@@ -1,0 +1,26 @@
+<mat-card>
+<h3>Doctors details</h3>
+<mat-form-field>
+<input matInput placeholder="enter id" [(ngModel)]="ID"> 
+</mat-form-field><br>
+<mat-form-field>
+    <input matInput placeholder="enter name" [(ngModel)]="docname">
+</mat-form-field><br>
+<mat-form-field>
+   <input matInput placeholder="enter surname" [(ngModel)]="docsurname">
+</mat-form-field><br>
+<mat-form-field>
+    <input matInput placeholder="enter specialisation" [(ngModel)]="specials">
+</mat-form-field><br>
+
+<button mat-raised-button color="primary" (click)="adddoc(ID,docname,docsurname,specials)">Save</button>
+</mat-card>
+
+<p *ngFor="let doc of doctorz">
+    {{doc.docId}}
+    {{doc.dname}}
+    {{doc.dsurname}}
+    {{doc.spec}}
+<button mat-stroked-button color="primary" [routerLink]="['/Appointment', doc.docId]">view appointment</button>
+</p>
+<router-outlet></router-outlet>
